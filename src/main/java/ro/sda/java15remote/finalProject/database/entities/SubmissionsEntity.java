@@ -1,5 +1,7 @@
 package ro.sda.java15remote.finalProject.database.entities;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.UUID;
@@ -9,12 +11,18 @@ import java.util.UUID;
 public class SubmissionsEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator")
     private UUID submissionsID;
 
-    private int userID;
+    @ManyToOne
+    @JoinColumn(name = "userID")
+    private UserEntity userEntity;
 
-    private int problemID;
+    @ManyToOne
+    @JoinColumn(name = "problemID")
+    private ProblemsEntity problemsEntity;
 
     private Date dateOfSubmissions;
 }
