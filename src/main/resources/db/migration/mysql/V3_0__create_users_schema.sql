@@ -19,4 +19,11 @@ CREATE TABLE IF NOT EXISTS users
     100
 ),
     accountID INT,
-    totalNumberOfPoints INT) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
+    totalNumberOfPoints INT,
+    FOREIGN KEY
+(
+    accountID
+) REFERENCES accountType
+(
+    accountID
+)) ENGINE=InnoDB DEFAULT CHARSET=UTF8;

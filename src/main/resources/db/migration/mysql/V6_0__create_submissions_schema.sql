@@ -10,5 +10,7 @@ CREATE TABLE IF NOT EXISTS  submissions
     problemID
     INT,
     dateOfSubmissions
-    DATE
+    DATE,
+    FOREIGN KEY (userID) REFERENCES users(userID),
+    FOREIGN KEY (problemID) REFERENCES problems(problemID)
 ) ENGINE=InnoDB DEFAULT CHARSET=UTF8;

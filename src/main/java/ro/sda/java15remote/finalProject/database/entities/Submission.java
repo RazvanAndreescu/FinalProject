@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "submissions")
-public class SubmissionsEntity {
+public class Submission {
 
     @Id
     @GeneratedValue(generator = "UUID")
@@ -18,11 +18,11 @@ public class SubmissionsEntity {
 
     @ManyToOne
     @JoinColumn(name = "userID")
-    private UserEntity userEntity;
+    private User user;
 
     @ManyToOne
     @JoinColumn(name = "problemID")
-    private ProblemsEntity problemsEntity;
+    private Problem problem;
 
     private Date dateOfSubmissions;
 }

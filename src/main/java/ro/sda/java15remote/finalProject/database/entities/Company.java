@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "company")
-public class CompanyEntity {
+public class Company {
 
     @Id
     @GeneratedValue(generator = "UUID")
@@ -23,5 +23,5 @@ public class CompanyEntity {
     @JoinTable(name = "problems_company",
             joinColumns = {@JoinColumn(name = "companyID")},
             inverseJoinColumns = {@JoinColumn(name = "problemID")})
-    Set<ProblemsEntity> problemsForThisCompany = new HashSet<>();
+    Set<Problem> problemsForThisCompany = new HashSet<>();
 }

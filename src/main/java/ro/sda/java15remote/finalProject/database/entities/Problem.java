@@ -7,7 +7,7 @@ import java.util.*;
 
 @Entity
 @Table(name = "problems")
-public class ProblemsEntity {
+public class Problem {
 
     @Id
     @GeneratedValue(generator = "UUID")
@@ -20,8 +20,8 @@ public class ProblemsEntity {
     private int numberOfPoints;
 
     @ManyToMany(mappedBy = "problemsForThisCompany")
-    private Set<CompanyEntity> companiesWhichRequireThisProblem = new HashSet<>();
+    private Set<Company> companiesWhichRequireThisProblem = new HashSet<>();
 
-    @OneToMany(mappedBy = "problemsEntity")
-    private List<SubmissionsEntity> submissionsForThisProblem = new ArrayList<>();
+    @OneToMany(mappedBy = "problem")
+    private List<Submission> submissionsForThisProblem = new ArrayList<>();
 }

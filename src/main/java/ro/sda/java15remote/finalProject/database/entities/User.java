@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "users")
-public class UserEntity {
+public class User {
 
     @Id
     @GeneratedValue(generator = "UUID")
@@ -23,10 +23,10 @@ public class UserEntity {
 
     @ManyToOne
     @JoinColumn(name = "accountID")
-    private  AccountTypeEntity accountTypeEntity;
+    private AccountType accountType;
     
     private int totalNumberOfPoints;
 
-    @OneToMany(mappedBy = "userEntity")
-    private List<SubmissionsEntity> submissionsForThisUser = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
+    private List<Submission> submissionsForThisUser = new ArrayList<>();
 }

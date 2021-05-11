@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "accountType")
-public class AccountTypeEntity {
+public class AccountType {
 
     @Id
     @GeneratedValue(generator = "UUID")
@@ -19,7 +19,7 @@ public class AccountTypeEntity {
 
     private int type;
 
-    @OneToMany(mappedBy = "accountTypeEntity")
-    Set<UserEntity> usersWithSameAccountType = new HashSet<>();
+    @OneToMany(mappedBy = "accountType")
+    Set<User> usersWithSameAccountType = new HashSet<>();
 
 }
