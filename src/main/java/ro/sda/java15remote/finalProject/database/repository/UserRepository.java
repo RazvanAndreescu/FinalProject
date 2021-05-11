@@ -13,10 +13,4 @@ public interface UserRepository extends JpaRepository<User, UUID> {
     List<User> findUsersByLastName(String lastName);
     List<User> findUsersByFirstName(String firstName);
     List<User> findUserByTotalNumberOfPoints(Integer totalNumberOfPoints);
-
-
-
-
-
-
 }
